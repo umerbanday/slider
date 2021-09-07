@@ -1,4 +1,4 @@
-# slider
+# Slider
 Arduino Slider Control 
 
 Pins used:  <br />
