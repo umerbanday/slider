@@ -31,7 +31,7 @@ _Arduino Pinout:_<br />
 
 ![alt text](https://github.com/umerbanday/slider/blob/main/images/Arduino-Uno-Pin-Diagram.png?raw=true) <br />
 
-_A4988 Pinout:_<br />
+_A4988 Pinout:_<br /><br />
 ![alt text](https://github.com/umerbanday/slider/blob/main/images/A4988%20Diagram.png?raw=true)
 
 
