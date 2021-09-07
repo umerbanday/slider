@@ -20,12 +20,24 @@ LCD : GPIO 2, 3, 4, 5, 6, 7  <br />
 - [ ] Automatic Operation 
 
 
-Some basic Git commands are:
+**Arduino Built-in Functions**<br />
+
+Setup function which runs initially :<br />
 ```
-git status
-git add
-git commit
+void setup(){
+    //setup code
+}
+
 ```
+Loop function which runs continuosly :<br />
+```
+
+void loop(){
+    //loop code
+}
+
+```
+
 **Basic Information**<br />
 _Arduino Pinout:_<br />
 
