@@ -16,8 +16,7 @@ LiquidCrystal lcd(2, 3, 4, 5, 6, 7); //Parameters (rs, enable, d4, d5, d6, d7)
 int analogPin1 = 14;
 int analogPin2 = 15;
 //int valpin =3;// potentiometer wiper (middle terminal) connected to analog pin 3
-
-                       // outside leads to ground and +5V
+// outside leads to ground and +5V
 
 float val = 0; 
 float val1=0;
