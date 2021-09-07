@@ -1,4 +1,10 @@
 # Slider
+**Note**
+If dev branch doesnt show up use:
+```
+git fetch --all
+```
+
 **Arduino Slider Control**
 
 
@@ -18,6 +24,7 @@ LCD : GPIO 2, 3, 4, 5, 6, 7  <br />
 - [ ] Encoder Control
 - [ ] Menu Design
 - [ ] Automatic Operation 
+
 
 
 **Arduino Built-in Functions**<br />
