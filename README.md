@@ -1,4 +1,4 @@
-# slider
+# Slider
 Arduino Slider Control 
 
 Pins used:  <br />
@@ -15,3 +15,4 @@ git status
 git add
 git commit
 ```
+![alt text](https://github.com/umerbanday/slider/blob/main/images/Arduino-Uno-Pin-Diagram.png?raw=true)
