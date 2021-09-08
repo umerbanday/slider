@@ -8,6 +8,12 @@
 #define sbi(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
 #endif
 #include <LiquidCrystal.h>
+#include <RotaryEncoder.h>
+
+#define PIN_IN1 12
+#define PIN_IN2 11
+
+RotaryEncoder encoder(PIN_IN1, PIN_IN2, RotaryEncoder::LatchMode::FOUR3);
 
 //Parameters (rs, enable, d4, d5, d6, d7)
 LiquidCrystal lcd(2, 3, 4, 5, 6, 7);
@@ -15,6 +21,8 @@ LiquidCrystal lcd(2, 3, 4, 5, 6, 7);
 // defines pins numbers
 int analogPin1 = 14;
 int analogPin2 = 15;
+
+int pos = 0;
 
 float val = 0; 
 float val1=0;
@@ -105,5 +113,13 @@ void loop() {
   }
   steps=0;
   direct=0;
-  Serial.println(val);
+  encoder.tick();
+
+  int newPos = encoder.getPosition();
+  if (pos != newPos) {
+    lcd.clear();
+    lcd.print(newPos);
+    pos = newPos;
+  } // if
+// loop ()
 }
