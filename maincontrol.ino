@@ -9,6 +9,26 @@
 #endif
 #include <LiquidCrystal.h>
 #include <RotaryEncoder.h>
+#include "BasicStepperDriver.h"
+
+// Motor steps per revolution. Most steppers are 200 steps or 1.8 degrees/step
+#define MOTOR_STEPS 200
+#define RPM 120
+
+// Since microstepping is set externally, make sure this matches the selected mode
+// If it doesn't, the motor will move at a different RPM than chosen
+// 1=full step, 2=half step etc.
+#define MICROSTEPS 32
+
+// All the wires needed for full functionality
+#define DIR 8
+#define STEP 9
+//Uncomment line to use enable/disable functionality
+//#define SLEEP 13
+
+// 2-wire basic config, microstepping is hardwired on the driver
+BasicStepperDriver stepper(MOTOR_STEPS, DIR, STEP);
+
 
 #define PIN_IN1 12
 #define PIN_IN2 11
@@ -18,7 +38,7 @@ RotaryEncoder encoder(PIN_IN1, PIN_IN2, RotaryEncoder::LatchMode::FOUR3);
 //Parameters (rs, enable, d4, d5, d6, d7)
 LiquidCrystal lcd(2, 3, 4, 5, 6, 7);
 
-// defines pins numbers
+// defines analog pins numbers
 int analogPin1 = 14;
 int analogPin2 = 15;
 
