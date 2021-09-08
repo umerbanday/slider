@@ -8,6 +8,11 @@ After deleting a remote branch, remove it from vscode by:
 ```
 git fetch --prune
 ```
+Local branches can then be deleted in vscode by:
+```
+Ctrl + Shift + P
+```
+Then, go to **Git:Delete Branch** and select the branch to delete.
 
 **Arduino Slider Control**
 
