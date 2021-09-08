@@ -13,7 +13,7 @@
 #define PIN_IN1 12
 #define PIN_IN2 11
 
-RotaryEncoder encoder(PIN_IN1, PIN_IN2, RotaryEncoder::LatchMode::TWO03);
+RotaryEncoder encoder(PIN_IN1, PIN_IN2, RotaryEncoder::LatchMode::FOUR3);
 
 //Parameters (rs, enable, d4, d5, d6, d7)
 LiquidCrystal lcd(2, 3, 4, 5, 6, 7);
