@@ -8,9 +8,9 @@
 #define sbi(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
 #endif
 #include <LiquidCrystal.h>
-//#include <Math.h>// includes the LiquidCrystal Library
 
-LiquidCrystal lcd(2, 3, 4, 5, 6, 7); //Parameters (rs, enable, d4, d5, d6, d7)
+//Parameters (rs, enable, d4, d5, d6, d7)
+LiquidCrystal lcd(2, 3, 4, 5, 6, 7);
 
 // defines pins numbers
 int analogPin1 = 14;
