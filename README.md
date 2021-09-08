@@ -13,7 +13,7 @@ StepPin : GPIO 9  <br />
 DirPIn  : GPIO 8   <br />
 Joystick : Analog 14,15  <br />
 LCD : GPIO 2, 3, 4, 5, 6, 7  <br />
-Encoder : CLK-GPIO 12, DT-GPIO 11, SW-GPIO 10
+Encoder : CLK-GPIO 12, DT-GPIO 11, SW-GPIO 10<br />
 Open Pins : GPIO 0,1,13
 
 **Features Implemented**
