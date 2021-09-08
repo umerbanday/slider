@@ -13,7 +13,7 @@
 
 // Motor steps per revolution. Most steppers are 200 steps or 1.8 degrees/step
 #define MOTOR_STEPS 200
-#define RPM 120
+#define RPM 0.5
 
 // Since microstepping is set externally, make sure this matches the selected mode
 // If it doesn't, the motor will move at a different RPM than chosen
@@ -43,6 +43,7 @@ int analogPin1 = 14;
 int analogPin2 = 15;
 
 int pos = 0;
+int newPos=0;
 
 float val = 0; 
 float val1=0;
@@ -67,10 +68,10 @@ stepper.begin(RPM, MICROSTEPS);
   Serial.begin(9600);  
   
   // Sets the two pins as Outputs
-  pinMode(stepPin,OUTPUT); 
-  pinMode(dirPin,OUTPUT);
+  //pinMode(stepPin,OUTPUT); 
+  //pinMode(dirPin,OUTPUT);
  // pinMode(valpin,OUTPUT);
-  digitalWrite(dirPin,LOW);
+  //digitalWrite(dirPin,LOW);
 }
 void loop() {
   if(initial==0){
@@ -87,21 +88,24 @@ void loop() {
   
   val = analogRead(analogPin2);  
   
-  while (val>600)
+  while (val>600 && newPos!=0)
   
   {
    if(direct==0){
     lcd.clear();
     lcd.print("FORWARD"); 
     direct++;
-    digitalWrite(dirPin,LOW);
+    //digitalWrite(dirPin,LOW);
    }
    val = analogRead(analogPin2);
    //Advance a step
-   digitalWrite(stepPin,HIGH);
-   delayMicroseconds(1);
+  // digitalWrite(stepPin,HIGH);
+   //delayMicroseconds(1);
    //delayMicroseconds(floor(2*(abs(val/100*5-25)/25)));
-   digitalWrite(stepPin,LOW);
+   //digitalWrite(stepPin,LOW);
+   stepper.move(-1*MICROSTEPS);
+
+
    
    //Serial.println(val/100*5);  
    prevdirect=0;
@@ -111,21 +115,22 @@ void loop() {
   steps=0;
   direct=0; 
 
-   while (val<400)
+   while (val<400 && newPos!=0)
   
   {
    if(direct==0){
     lcd.clear();
     lcd.print("REVERSE"); 
     direct++;
-    digitalWrite(dirPin,HIGH);
+    //digitalWrite(dirPin,HIGH);
    }
   
    //Advance a step
-   digitalWrite(stepPin,HIGH);
-   delayMicroseconds(1);
+   //digitalWrite(stepPin,HIGH);
+   //delayMicroseconds(1);
    //delayMicroseconds(floor(2*(abs(val/100*5-25)/25)));
-   digitalWrite(stepPin,LOW);
+  // digitalWrite(stepPin,LOW);
+   stepper.move(MICROSTEPS);
    val = analogRead(analogPin2);
    //Serial.println(val/100*5);  
    prevdirect=0;
@@ -136,10 +141,16 @@ void loop() {
   direct=0;
   encoder.tick();
 
-  int newPos = encoder.getPosition();
+  newPos = encoder.getPosition();
   if (pos != newPos) {
+    if(newPos==0){
+      
+    }else{
+      stepper.begin(-50*newPos, MICROSTEPS);
+    }
+    
     lcd.clear();
-    lcd.print(newPos);
+    lcd.print(-newPos);
     pos = newPos;
   } // if
 // loop ()
