@@ -1,8 +1,12 @@
 # Slider
-**Note**
-If dev branch doesnt show up use:
+**Note for VSCode**
+If remote dev branch doesnt show up in vscode, use:
 ```
 git fetch --all
+```
+After deleting a remote branch, remove it from vscode by:
+```
+git fetch --prune
 ```
 
 **Arduino Slider Control**
