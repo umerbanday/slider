@@ -78,7 +78,7 @@ void loop() {
    
    //Serial.println(val/100*5);  
    prevdirect=0;
-   //steps++;
+   
     
   }
   steps=0;
