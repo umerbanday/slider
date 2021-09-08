@@ -1,5 +1,5 @@
 # Slider
-**Note for VSCode**
+**Note for VSCode**<br/>
 If remote dev branch doesnt show up in vscode, use:
 ```
 git fetch --all
