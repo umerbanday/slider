@@ -46,15 +46,13 @@ int pos = 0;
 int newPos=0;
 
 float val = 0; 
-float val1=0;
-const int stepPin = 9; 
-const int dirPin = 8; 
+
 int valout;
  long i=0;
  int initial=0;
  int direct=0;
  int prevdirect=0;
- int steps=0;
+
 void setup() {
   #if FASTADC
  // set prescale to 16
@@ -67,11 +65,6 @@ stepper.begin(RPM, MICROSTEPS);
  lcd.begin(16,2); // Initializes the 16x2 LCD screen
   Serial.begin(9600);  
   
-  // Sets the two pins as Outputs
-  //pinMode(stepPin,OUTPUT); 
-  //pinMode(dirPin,OUTPUT);
- // pinMode(valpin,OUTPUT);
-  //digitalWrite(dirPin,LOW);
 }
 void loop() {
   if(initial==0){
@@ -112,7 +105,6 @@ void loop() {
    
     
   }
-  steps=0;
   direct=0; 
 
    while (val<400 && newPos!=0)
@@ -137,7 +129,6 @@ void loop() {
   // steps++;
     
   }
-  steps=0;
   direct=0;
   encoder.tick();
 
