@@ -1,6 +1,6 @@
 # Slider
-**Note for VSCode**<br/>
-If remote dev branch doesnt show up in vscode, use:
+**Note for VSCode :**<br/>
+If remote non-master branch doesnt show up in vscode, use:
 ```
 git fetch --all
 ```
