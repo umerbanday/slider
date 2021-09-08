@@ -62,6 +62,7 @@ void setup() {
  cbi(ADCSRA,ADPS0) ;
 #endif
   
+stepper.begin(RPM, MICROSTEPS);
  lcd.begin(16,2); // Initializes the 16x2 LCD screen
   Serial.begin(9600);  
   
