@@ -49,7 +49,7 @@ void loop(){
 **Basic Information**<br />
 _Arduino Pinout:_<br />
 
-![alt text](https://github.com/umerbanday/slider/blob/main/images/Arduino-Uno-Pin-Diagram.png?raw=true) <br />
+![alt text](https://github.com/umerbanday/slider/blob/main/images/High-Res-Arduino-UNO-Pinout.jpg?raw=true) <br />
 
 _A4988 Pinout:_<br /><br />
 ![alt text](https://github.com/umerbanday/slider/blob/main/images/A4988%20Diagram.png?raw=true)<br /><br />
