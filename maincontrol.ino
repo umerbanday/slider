@@ -47,7 +47,6 @@ int newPos=0;
 
 float val = 0; 
 
-int valout;
  long i=0;
  int initial=0;
  int direct=0;
